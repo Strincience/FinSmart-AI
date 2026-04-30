@@ -1,0 +1,89 @@
+/* ─── src/index.css ──────────────────────────────────────────────────────────
+   This file is the single global stylesheet imported once by src/main.jsx.
+   It does three things:
+     1. Injects Tailwind's base reset, component utilities, and helpers.
+     2. Declares CSS custom properties (variables) for consistent theming.
+     3. Adds a few global styles that are awkward to express in Tailwind classes.
+── ─────────────────────────────────────────────────────────────────────────── */
+
+/* Step 1 — Tailwind layers */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Step 2 — CSS custom properties (design tokens) */
+:root {
+  --color-navy-dark:   #070f1c;
+  --color-navy-main:   #0D2137;
+  --color-navy-mid:    #112840;
+  --color-teal:        #0B7A75;
+  --color-gold:        #C9922C;
+  --color-gold-light:  #F0C060;
+  --color-text-dim:    #8A9BB0;
+  --color-border:      rgba(255, 255, 255, 0.08);
+
+  /* Gradient used on the page background */
+  --bg-gradient: linear-gradient(
+    160deg,
+    #070f1c 0%,
+    #0D2137 40%,
+    #0a2030 70%,
+    #061018 100%
+  );
+
+  /* Gradient used for AI message bubbles */
+  --ai-bubble-gradient: linear-gradient(
+    135deg,
+    #0f2d45 0%,
+    #0d2640 100%
+  );
+}
+
+/* Step 3 — Global base overrides */
+
+/* Smooth scrolling everywhere */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Full-height layout without overflow */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg-gradient);
+  background-attachment: fixed;   /* gradient stays fixed while content scrolls */
+  font-family: 'Lato', sans-serif;
+  color: #e2e8f0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar styling — subtle and on-brand */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* Selection highlight */
+::selection {
+  background: rgba(201, 146, 44, 0.35);
+  color: #fff;
+}
+
+/* Textarea focus ring — Tailwind's default ring doesn't match our palette */
+textarea:focus {
+  outline: none;
+}
