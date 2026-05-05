@@ -1,5 +1,7 @@
 // ─── src/config/db.js ────────────────────────────────────────────────────────
-//
+//This file helps to setup the database of the application
+
+
 // This file contains one exported function: connectDB().
 // It is called once when the server starts (in server.js).
 // Mongoose handles the connection pool internally — you don't need to call it
@@ -19,7 +21,8 @@ async function connectDB() {
     });
 
     console.log(`✅  MongoDB connected: ${conn.connection.host}`);
-  } catch (error) {
+  }
+   catch (error) {
     console.error('❌  MongoDB connection failed:', error.message);
     // Exit with a non-zero code so the shell/process manager knows it crashed
     process.exit(1);

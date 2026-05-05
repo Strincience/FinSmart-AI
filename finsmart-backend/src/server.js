@@ -42,13 +42,20 @@ app.use(
   })
 );
 
+// JSON body parser — Express needs this to read req.body from POST requests.
+// The 'limit' prevents very large payloads from overwhelming the server.
 app.use(express.json({ limit: '10kb' }));
 
-
-
+// General rate limiter — applied to ALL routes as a broad safety net.
+// The stricter chat-specific limiter is applied per-route in routes/chat.js.
 app.use(generalLimiter);
 
+// ── Routes ────────────────────────────────────────────────────────────────────
 
+// All routes defined in routes/chat.js are accessible under the /api prefix.
+// Examples:
+//   POST /api/chat     → handled by chatController.handleChat
+//   GET  /api/health   → quick uptime check
 app.use('/api', chatRouter);
 
 // ── 404 Handler — catch requests for undefined routes ────────────────────────

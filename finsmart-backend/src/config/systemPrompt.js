@@ -1,6 +1,6 @@
 // ─── src/config/systemPrompt.js ──────────────────────────────────────────────
 //
-// This file exports the system prompt that is sent to the Claude API at the
+// This file exports the system prompt that is sent to the Groq API at the
 // beginning of every conversation.
 //
 // The system prompt is the most important engineering decision in an LLM-based
@@ -11,7 +11,7 @@
 // any other file in the codebase.
 //
 // HOW IT WORKS:
-// When we call the Claude API, we pass:
+// When we call the Groq API, we pass:
 //   system:   SYSTEM_PROMPT              (this file)
 //   messages: [ ...conversationHistory ] (from MongoDB)
 // Claude reads the system prompt first, then the conversation, then responds.

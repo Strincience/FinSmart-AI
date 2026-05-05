@@ -1,21 +1,22 @@
 {
   "name": "finsmart-backend",
   "private": true,
-  "version": "1.0.0",
-  "description": "FinSmart AI — Express.js backend with Claude API and MongoDB",
+  "version": "2.0.0",
+  "description": "FinSmart AI v2 — 7-stage NLP pipeline, RAG knowledge base, WhatsApp integration",
   "type": "commonjs",
   "main": "src/server.js",
   "scripts": {
     "dev":   "nodemon src/server.js",
-    "start": "node src/server.js"
+    "start": "node src/server.js",
+    "seed":  "node src/data/seedKnowledgeBase.js"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.27.3",
-    "cors":              "^2.8.5",
-    "dotenv":            "^16.4.5",
-    "express":           "^4.19.2",
+    "cors":               "^2.8.5",
+    "dotenv":             "^16.4.5",
+    "express":            "^4.19.2",
     "express-rate-limit": "^7.3.1",
-    "mongoose":          "^8.5.1"
+    "groq-sdk":           "^0.7.0",
+    "mongoose":           "^8.5.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.4"

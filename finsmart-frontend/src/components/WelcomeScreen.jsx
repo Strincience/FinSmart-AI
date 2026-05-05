@@ -44,7 +44,7 @@ export default function WelcomeScreen({ onPromptClick }) {
 
       {/* Heading */}
       <h1
-        className="text-3xl font-bold text-white mb-2"
+        className="text-3xl font-bold text-white mt-10"
         style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
       >
         Welcome to FinSmart AI
@@ -55,7 +55,7 @@ export default function WelcomeScreen({ onPromptClick }) {
         className="text-base max-w-md mb-1"
         style={{ color: '#8A9BB0', fontFamily: 'Lato, sans-serif' }}
       >
-        Your conversational financial intelligence assistant — built for
+        Your conversational financial intelligence assistant built for
         Nigerian small and medium-sized business owners.
       </p>
 
