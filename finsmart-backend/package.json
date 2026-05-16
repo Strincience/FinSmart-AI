@@ -1,0 +1,28 @@
+{
+  "name": "finsmart-backend",
+  "private": true,
+  "version": "2.0.0",
+  "description": "FinSmart AI v2 — 7-stage NLP pipeline, RAG knowledge base, WhatsApp integration",
+  "type": "commonjs",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "seed": "node src/data/seedKnowledgeBase.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.3.1",
+    "groq-sdk": "^0.7.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^8.5.1",
+    "validator": "^13.15.35"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
