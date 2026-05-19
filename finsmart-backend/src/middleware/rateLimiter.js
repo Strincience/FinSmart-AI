@@ -22,6 +22,7 @@ const rateLimit = require('express-rate-limit');
 // ── General limiter — all routes ─────────────────────────────────────────────
 const generalLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,  // 15-minute window
+   trustProxy: true,
   max:      200,              // max 200 requests per IP per 15 minutes
   standardHeaders: true,      // send RateLimit-* headers in responses
   legacyHeaders:   false,
@@ -33,6 +34,7 @@ const generalLimiter = rateLimit({
 // ── Chat-specific limiter — POST /api/chat only ───────────────────────────────
 const chatLimiter = rateLimit({
   windowMs: 60 * 1000,  // 1-minute window
+   trustProxy: true,
   max:      20,          // max 20 chat messages per IP per minute
   standardHeaders: true,
   legacyHeaders:   false,
